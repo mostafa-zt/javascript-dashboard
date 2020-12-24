@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/styles/app.css" rel="stylesheet">
+    <script src="/scripts/App.js" defer type="module"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzu4gTGLkYJ3VS2Ab76Z2sBacicBXtSEU"
+        type="text/javascript" async defer></script>
+</head>
+
+<body>
+    <div id="backdrop"></div>
+    <div class="outer_div" id="add-modal-prj">
+        <div class="middle_div">
+            <div class="inner_div modal card">
+                <div class="modal__content">
+                    <div class="text-item"><label>Title</label><input name="title" id="txt-title" type="text"></div>
+                    <div class="text-item"><label>Duration</label><input name="duration" id="txt-duration" type="text">
+                    </div>
+                    <div class="text-item"><label>Organization</label><input name="organization" id="txt-organization"
+                            type="text">
+                    </div>
+                    <div id="map"></div>
+                    <label>Address</label>
+                    <input name="address" id="txt-address" type="text">
+                    <button class="button button-success" id="user-location-btn">Get My Location</button>
+                </div>
+                <div class="modal__actions">
+                    <button class="button button-cancel modal_cancel">Cancel</button>
+                    <button class="button button-success modal_accept">Add Project</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="outer_div" id="delete-modal-prj">
+        <div class="middle_div">
+            <div class="inner_div modal card">
+                <h2 class="modal__title">Are you sure?</h2>
+                <p class="modal__content">
+                    Are you sure you want to delete this item?
+                </p>
+                <div class="modal__actions">
+                    <button class="button button-cancel modal_cancel">No</button>
+                    <button class="button button-success modal_accept">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="text-center">
+        <h1>Javascript Dashboard Mini Project</h1>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col col-lg">
+                <div class="bar">
+                    <button class="button button-success" id="new-prj">Add Project</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-md col-sm">
+                    <div class="project-box" id="project-open">
+                        <div class="pb-header">Project Open</div>
+                        <div class="text-center empty-project">
+                            <img src="/img/doc.png" title="document" />
+                            <div>Project Open is Empty!</div>
+                        </div>
+                        <ul class="project-list" id="project-open-list"></ul>
+                    </div>
+                </div>
+                <div class="col col-md col-sm">
+                    <div class="project-box" id="project-done">
+                        <div class="pb-header">Project Done</div>
+                        <div class="text-center empty-project">
+                            <img src="/img/doc.png" title="document" />
+                            <div>Project Done is Empty!</div>
+                        </div>
+                        <ul class="project-list" id="project-done-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="alert" id="alert-msg">
+    </div>
+    <footer></footer>
+</body>
+
+</html>
