@@ -233,14 +233,12 @@ export class ProjectList extends Project {
                 }
             });
             box.addEventListener('dragleave', (event) => {
-                if (
-                    event.relatedTarget === null ||
-                    event.relatedTarget.closest('.project-box') !== box
-                ) {
+                if (event.relatedTarget === null || event.relatedTarget.closest('.project-box') !== box) {
                     box.classList.remove('droppable');
                 }
             });
             box.addEventListener('drop', (event) => {
+                event.preventDefault();
                 const prjId = event.dataTransfer.getData('text/plain');
                 const targetList = event.target.closest('.project-box');
                 let items = [];
